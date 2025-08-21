@@ -31,7 +31,7 @@ export const addBlog = async (
     throw new ExpressError(500, "Image file is required");
   }
   const result = await cloudinary.uploader.upload(file.path, {
-    folder: "portfolio/blogs",
+    folder: "Craftfolio/blogs",
   });
 
   return await createBlog({
@@ -49,7 +49,7 @@ export const deleteBlog = async (id: string): Promise<void> => {
 
   const publicId = blog.image.split("/").pop()?.split(".")[0];
   if (publicId) {
-    await cloudinary.uploader.destroy(`portfolio/blogs/${publicId}`);
+    await cloudinary.uploader.destroy(`Craftfolio/blogs/${publicId}`);
   }
 
   await deleteBlogById(id);

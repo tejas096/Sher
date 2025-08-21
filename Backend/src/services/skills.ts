@@ -32,7 +32,7 @@ export const addSkill = async (
     throw new ExpressError(500, "Image file is required");
   }
   const result = await cloudinary.uploader.upload(file.path, {
-    folder: "portfolio/skills",
+    folder: "Craftfolio/skills",
   });
 
   return await createSkill({
@@ -51,7 +51,7 @@ export const deleteSkill = async (id: string): Promise<void> => {
 
   const publicId = skill.image.split("/").pop()?.split(".")[0];
   if (publicId) {
-    await cloudinary.uploader.destroy(`portfolio/skills/${publicId}`);
+    await cloudinary.uploader.destroy(`Craftfolio/skills/${publicId}`);
   }
   await deleteSkillbyProjects(id);
   await deleteSkillById(id);
