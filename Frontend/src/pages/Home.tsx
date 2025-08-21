@@ -1,12 +1,12 @@
 import { Suspense, lazy } from "react";
 import Loading from "../components/Loading";
+import Profile from "../components/Profile";
+import HomeMain from "../components/HomeMain";
 const HomeBlogs = lazy(() => import("../components/HomeBlogs"));
 const HomeContact = lazy(() => import("../components/HomeContact"));
-const HomeMain = lazy(() => import("../components/HomeMain"));
 const HomeProject = lazy(() => import("../components/HomeProject"));
 const HomeQue = lazy(() => import("../components/HomeQue"));
 const HomeSkills = lazy(() => import("../components/HomeSkills"));
-const Profile = lazy(() => import("../components/Profile"));
 
 const Home = () => {
   return (
